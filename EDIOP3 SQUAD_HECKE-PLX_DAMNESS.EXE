@@ -1,4 +1,4 @@
--- Gui to Lua
+ -- Gui to Lua
 -- Version: 3.2
 
 -- Instances:
@@ -101,7 +101,7 @@ TextLabel_2.BorderSizePixel = 0
 TextLabel_2.Position = UDim2.new(0.172259822, 0, 0.969139874, 0)
 TextLabel_2.Size = UDim2.new(0, 466, 0, 5)
 TextLabel_2.Font = Enum.Font.SourceSans
-TextLabel_2.Text = "BY E3S_H-P_D TEAM"
+TextLabel_2.Text = "MADE BY E3S_H-P_D TEAM "
 TextLabel_2.TextColor3 = Color3.fromRGB(0, 255, 0)
 TextLabel_2.TextSize = 25.000
 
@@ -405,107 +405,110 @@ TextButton_30.TextSize = 21.000
 -- Scripts:
 
 local function BCMYFQM_fake_script() -- Frame.Drag Gui Script 
-local script = Instance.new('LocalScript', Frame)
+	local script = Instance.new('LocalScript', Frame)
 
-function dragify(Main)
-dragToggle = nil
-dragSpeed = 0.95 -- You can edit this.
-dragInput = nil
-dragStart = nil
-dragPos = nil
-
-function updateInput(input)
-Delta = input.Position - dragStart
-Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + Delta.X, startPos.Y.Scale, startPos.Y.Offset + Delta.Y)
-game:GetService("TweenService"):Create(Main, TweenInfo.new(.25), {Position = Position}):Play()
-end
-
-Main.InputBegan:Connect(function(input)
-if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then
-dragToggle = true
-dragStart = input.Position
-startPos = Main.Position
-input.Changed:Connect(function()
-if (input.UserInputState == Enum.UserInputState.End) then
-dragToggle = false
-end
-end)
-end
-end)
-
-Main.InputChanged:Connect(function(input)
-if (input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch) then
-dragInput = input
-end
-end)
-
-game:GetService("UserInputService").InputChanged:Connect(function(input)
-if (input == dragInput and dragToggle) then
-updateInput(input)
-end
-end)
-end
-
-dragify(script.Parent)
+	function dragify(Main)
+	dragToggle = nil
+	dragSpeed = 0.95 -- You can edit this.
+	dragInput = nil
+	dragStart = nil
+	dragPos = nil
+	
+	function updateInput(input)
+	Delta = input.Position - dragStart
+	Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + Delta.X, startPos.Y.Scale, startPos.Y.Offset + Delta.Y)
+	game:GetService("TweenService"):Create(Main, TweenInfo.new(.25), {Position = Position}):Play()
+	end
+	
+	Main.InputBegan:Connect(function(input)
+	if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then
+	dragToggle = true
+	dragStart = input.Position
+	startPos = Main.Position
+	input.Changed:Connect(function()
+	if (input.UserInputState == Enum.UserInputState.End) then
+	dragToggle = false
+	end
+	end)
+	end
+	end)
+	
+	Main.InputChanged:Connect(function(input)
+	if (input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch) then
+	dragInput = input
+	end
+	end)
+	
+	game:GetService("UserInputService").InputChanged:Connect(function(input)
+	if (input == dragInput and dragToggle) then
+	updateInput(input)
+	end
+	end)
+	end
+	
+	dragify(script.Parent)
 end
 coroutine.wrap(BCMYFQM_fake_script)()
 local function GOJDB_fake_script() -- TextButton.Script 
-local script = Instance.new('Script', TextButton)
+	local script = Instance.new('Script', TextButton)
 
-function click()
-local function exPro(root)
-for _, v in pairs(root:GetChildren()) do
-if v:IsA("Decal") and v.Texture ~= "http://www.roblox.com/asset/?id=16139546365" then
-v.Parent = nil
-elseif v:IsA("BasePart") then
-v.Material = "Plastic"
-v.Transparency = 0
-local One = Instance.new("Decal", v)
-local Two = Instance.new("Decal", v)
-local Three = Instance.new("Decal", v)
-local Four = Instance.new("Decal", v)
-local Five = Instance.new("Decal", v)
-local Six = Instance.new("Decal", v)
-One.Texture = "http://www.roblox.com/asset/?id=16139546365"
-Two.Texture = "http://www.roblox.com/asset/?id=16139546365"
-Three.Texture = "http://www.roblox.com/asset/?id=16139546365"
-Four.Texture = "http://www.roblox.com/asset/?id=16139546365"
-Five.Texture = "http://www.roblox.com/asset/?id=16139546365"
-Six.Texture = "http://www.roblox.com/asset/?id=16139546365"
-One.Face = "Front"
-Two.Face = "Back"
-Three.Face = "Right"
-Four.Face = "Left"
-Five.Face = "Top"
-Six.Face = "Bottom"
-end
-exPro(v)
-end
-end
-local function asdf(root)
-for _, v in pairs(root:GetChildren()) do
-asdf(v)
-end
-end
-exPro(workspace)
-asdf(workspace)
-end
-
-script.Parent.MouseButton1Down:connect(click)
-
+	function click()
+		local function exPro(root)
+			for _, v in pairs(root:GetChildren()) do
+				if v:IsA("Decal") and v.Texture ~= "http://www.roblox.com/asset/?id=16139546365" then
+					v.Parent = nil
+				elseif v:IsA("BasePart") then
+					v.Material = "Plastic"
+					v.Transparency = 0
+					local One = Instance.new("Decal", v)
+					local Two = Instance.new("Decal", v)
+					local Three = Instance.new("Decal", v)
+					local Four = Instance.new("Decal", v)
+					local Five = Instance.new("Decal", v)
+					local Six = Instance.new("Decal", v)
+					One.Texture = "http://www.roblox.com/asset/?id=16139546365"
+					Two.Texture = "http://www.roblox.com/asset/?id=16139546365"
+					Three.Texture = "http://www.roblox.com/asset/?id=16139546365"
+					Four.Texture = "http://www.roblox.com/asset/?id=16139546365"
+					Five.Texture = "http://www.roblox.com/asset/?id=16139546365"
+					Six.Texture = "http://www.roblox.com/asset/?id=16139546365"
+					One.Face = "Front"
+					Two.Face = "Back"
+					Three.Face = "Right"
+					Four.Face = "Left"
+					Five.Face = "Top"
+					Six.Face = "Bottom"
+				end
+				exPro(v)
+			end
+		end
+		local function asdf(root)
+			for _, v in pairs(root:GetChildren()) do
+				asdf(v)
+			end
+		end
+		exPro(workspace)
+		asdf(workspace)
+	end
+	
+	script.Parent.MouseButton1Down:connect(click)
+	
 end
 coroutine.wrap(GOJDB_fake_script)()
 local function CDSNOXH_fake_script() -- TextButton_2.Script 
-local script = Instance.new('Script', TextButton_2)
+	local script = Instance.new('Script', TextButton_2)
 
-function click()
-s = Instance.new("Sky")
-s.Name = "Sky"
-s.Parent = game.Lighting
-s.SkyboxBk = "http://www.roblox.com/asset/?id=16139546365"
-s.SkyboxDn = "http://www.roblox.com/asset/?id=16139546365"
-s.SkyboxFt = "http://www.roblox.com/asset/?id=16139546365"
-s.SkyboxLf = "http://www.roblox.com/asset/?id=16139546365"
-s.SkyboxRt = "http://www.roblox.com/asset/?id=16139546365"
-s.SkyboxU
-
+	function click()
+		s = Instance.new("Sky")
+		s.Name = "Sky"
+		s.Parent = game.Lighting
+		s.SkyboxBk = "http://www.roblox.com/asset/?id=16139546365"
+		s.SkyboxDn = "http://www.roblox.com/asset/?id=16139546365"
+		s.SkyboxFt = "http://www.roblox.com/asset/?id=16139546365"
+		s.SkyboxLf = "http://www.roblox.com/asset/?id=16139546365"
+		s.SkyboxRt = "http://www.roblox.com/asset/?id=16139546365"
+		s.SkyboxUp = "http://www.roblox.com/asset/?id=16139546365"
+		game.Lighting.TimeOfDay = 12
+	end
+	
+	script.Par
